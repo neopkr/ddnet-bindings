@@ -1,0 +1,143 @@
+cl_show_welcome	Show welcome message indicating the first launch of the client	1	0	1
+cl_motd_time	How long to show the server message of the day	10	0	100
+cl_map_download_url	URL used to download maps (can start with http:// or https://)	"https://maps.ddnet.org"		
+cl_map_download_connect_timeout_ms	HTTP map downloads: timeout for the connect phase in milliseconds (0 to disable)	2000	0	100000
+cl_map_download_low_speed_limit	HTTP map downloads: Set low speed limit in bytes per second (0 to disable)	4000	0	100000
+cl_map_download_low_speed_time	HTTP map downloads: Set low speed limit time period (0 to disable)	3	0	100000
+cl_languagefile	What language file to use	""		
+cl_skin_download_url	URL used to download skins	"https://skins.ddnet.org/skin/"		
+cl_skin_community_download_url	URL used to download community skins	"https://skins.ddnet.org/skin/community/"		
+cl_vanilla_skins_only	Only show skins available in Vanilla Teeworlds	0	0	1
+cl_download_skins	Download skins from cl_skin_download_url on-the-fly	1	0	1
+cl_download_community_skins	Allow to download skins created by the community. Uses cl_skin_community_download_url instead of cl_skin_download_url for the download	0	0	1
+cl_auto_statboard_screenshot	Automatically take game over statboard screenshot	0	0	1
+cl_auto_statboard_screenshot_max	Maximum number of automatically created statboard screenshots (0 = no limit)	10	0	1000
+cl_default_zoom	Default zoom level	10	0	20
+cl_smooth_zoom_time	Time of smooth zoom animation ingame in ms (0 for off)	250	0	5000
+cl_limit_max_zoom_level	Specifies, if zooming ingame should be limited or not (0 = no limit)	1	0	1
+cl_dummy	Whether you control your player (0) or your dummy (1)	0	0	1
+cl_dummy_hammer	Whether dummy is hammering for a hammerfly	0	0	1
+cl_dummy_resetonswitch	Whether dummy or player should stop pressing keys when you switch (0 = off, 1 = dummy, 2 = player)	0	0	2
+cl_dummy_restore_weapon	Whether dummy should switch to last weapon after hammerfly	1	0	1
+cl_dummy_copy_moves	Whether dummy should copy your moves	0	0	1
+cl_dummy_control	Whether you can control dummy at the same time (cl_dummy_jump, cl_dummy_fire, cl_dummy_hook)	0	0	1
+cl_dummy_jump	Whether dummy is jumping (requires cl_dummy_control 1)	0	0	1
+cl_dummy_fire	Whether dummy is firing (requires cl_dummy_control 1)	0	0	1
+cl_dummy_hook	Whether dummy is hooking (requires cl_dummy_control 1)	0	0	1
+cl_show_start_menu_images	Show start menu images	1	0	1
+cl_skip_start_menu	Skip the start menu	0	0	1
+cl_video_pausewithdemo	Pause video rendering when demo playing pause	1	0	1
+cl_video_showhud	Show ingame HUD when rendering video	0	0	1
+cl_video_showchat	Show chat when rendering video	1	0	1
+cl_video_sound_enable	Use sound when rendering video	1	0	1
+cl_video_show_hook_coll_other	Show other players' hook collision lines when rendering video	0	0	1
+cl_video_show_direction	Show players' key presses when rendering video (1 = other players', 2 = also your own, 3 = only your own)	0	0	3
+cl_video_crf	Set crf when encode video with libx264 (0 for highest quality, 51 for lowest)	18	0	51
+cl_video_preset	Set preset when encode video with libx264, default is 5 (medium), 0 is ultrafast, 9 is placebo (the slowest, not recommend)	5	0	9
+cl_save_settings	Write the settings file on exit	1	0	1
+cl_refresh_rate	Refresh rate for updating the game (in Hz)	0	0	10000
+cl_refresh_rate_inactive	Refresh rate for updating the game when the window is inactive (in Hz)	120	0	10000
+cl_editor	Open the map editor	0	0	1
+cl_editor_dilate	Automatically dilates embedded images	1	0	1
+cl_skin_filter_string	Skin filtering string	""		
+cl_editor_max_history	Maximum number of undo actions in the editor history (not shared between editor, envelope editor and server settings editor)	50	1	500
+cl_auto_demo_record	Automatically record demos	1	0	1
+cl_auto_demo_on_connect	Only start a new demo when connect while automatically record demos	0	0	1
+cl_auto_demo_max	Maximum number of automatically recorded demos (0 = no limit)	10	0	1000
+cl_auto_screenshot	Automatically take game over screenshot	0	0	1
+cl_auto_screenshot_max	Maximum number of automatically created screenshots (0 = no limit)	10	0	1000
+cl_auto_csv	Automatically create game over csv	0	0	1
+cl_auto_csv_max	Maximum number of automatically created csvs (0 = no limit)	10	0	1000
+cl_show_broadcasts	Show broadcasts ingame	1	0	1
+cl_print_broadcasts	Print broadcasts to console	1	0	1
+cl_print_motd	Print motd to console	1	0	1
+cl_friends_ignore_clan	Ignore clan tag when searching for friends	1	0	1
+cl_assets_entities	The asset/assets for entities	"default"		
+cl_asset_game	The asset for game	"default"		
+cl_asset_emoticons	The asset for emoticons	"default"		
+cl_asset_particles	The asset for particles	"default"		
+cl_asset_hud	The asset for HUD	"default"		
+cl_asset_extras	The asset for the game graphics that do not come from Teeworlds	"default"		
+cl_port	Port to use for client connections to server (0 to choose a random port, 1024 or higher to set a manual port, requires a restart)	0	0	65535
+cl_dummy_port	Port to use for dummy connections to server (0 to choose a random port, 1024 or higher to set a manual port, requires a restart)	0	0	65535
+cl_contact_port	Port to use for serverinfo connections to server (0 to choose a random port, 1024 or higher to set a manual port, requires a restart)	0	0	65535
+cl_race_binds_set	What level the DDRace binds are set to (this is automated, you don't need to use this)	0	0	1
+cl_reconnect_timeout	How many seconds to wait before reconnecting (after timeout, 0 for off)	120	0	600
+cl_reconnect_full	How many seconds to wait before reconnecting (when server is full, 0 for off)	5	0	600
+cl_message_system_color	System message color	2817983		
+cl_message_client_color	Client message color	9633471		
+cl_message_highlight_color	Highlighted message color	65471		
+cl_message_team_color	Team message color	5636050		
+cl_message_color	Message color	255		
+cl_laser_rifle_inner_color	Laser inner color for Rifle	11206591		
+cl_laser_rifle_outline_color	Laser outline color for Rifle	11176233		
+cl_laser_sg_inner_color	Laser inner color for Shotgun	1467241		
+cl_laser_sg_outline_color	Laser outline color for Shotgun	1866773		
+cl_laser_door_inner_color	Laser inner color for doors	7701379		
+cl_laser_door_outline_color	Laser outline color for doors	7667473		
+cl_laser_freeze_inner_color	Laser inner color for freezes	12001153		
+cl_laser_freeze_outline_color	Laser outline color for freezes	11613223		
+cl_kill_message_normal_color	Kill message normal color	255		
+cl_kill_message_highlight_color	Kill message highlight color	255		
+cl_message_friend	Enable coloring and the heart for friends	1	0	1
+cl_message_friend_color	Friend message color	65425		
+conn_timeout	Network timeout	100	5	1000
+cl_show_ids	Whether to show client ids in scoreboard	0	0	1
+cl_scoreboard_on_death	Whether to show scoreboard after death or not	1	0	1
+cl_auto_race_record	Save the best demo of each race	1	0	1
+cl_replays	Enable/disable replays	0	0	1
+cl_replay_length	Set the default length of the replays	30	10	0
+cl_race_record_server_control	Let the server start the race recorder	1	0	1
+cl_demo_name	Save the player name within the demo	1	0	1
+cl_demo_assume_race	Assume that demos are race demos	1	0	1
+cl_race_ghost	Enable ghost	1	0	1
+cl_race_ghost_server_control	Let the server start the ghost	1	0	1
+cl_race_show_ghost	Show ghost	1	0	1
+cl_race_save_ghost	Save ghost	1	0	1
+cl_race_ghost_strict_map	Match ghosts by map version instead of only map name	0	0	1
+cl_race_ghost_save_best	Save only ghosts that are better than the previous record.	1	0	1
+cl_race_ghost_alpha	Visbility of ghosts (alpha value, 0 invisible, 100 fully visible)	40	0	100
+cl_ddrace_scoreboard	Enable DDRace Scoreboard	1	0	1
+cl_show_others	Show players in other teams (2 to show own team only)	0	0	2
+cl_show_others_alpha	Show players in other teams (alpha value, 0 invisible, 100 fully visible)	40	0	100
+cl_overlay_entities	Overlay game tiles with a percentage of opacity	0	0	100
+cl_showquads	Show quads (only interesting for mappers, or if your system has extremely bad performance)	1	0	1
+cl_background_color	Background color	128		
+cl_background_entities_color	Background (entities) color	128		
+cl_background_entities	Background (entities)	""		
+cl_run_on_join	Command to run when joining a server	""		
+cl_menu_map	Background map in the menu	"auto"		
+cl_rotation_radius	Menu camera rotation radius	30	1	500
+cl_rotation_speed	Menu camera rotations in seconds	40	1	120
+cl_camera_speed	Menu camera speed	5	1	40
+cl_background_show_tiles_layers	Whether draw tiles layers when using custom background (entities)	0	0	1
+cl_unpredicted_shadow	Show unpredicted shadow tee (0 = off, 1 = on, -1 = don't even show in debug mode)	0	-1	1
+cl_predict_freeze	Predict freeze tiles (0 = off, 1 = on, 2 = partial (allow a small amount of movement in freeze)	1	0	2
+cl_show_ninja	Show ninja skin	1	0	1
+cl_show_hook_coll_other	Show other players' hook collision line (2 to always show)	1	0	2
+cl_show_hook_coll_own	Show own players' hook collision line (2 to always show)	1	0	2
+cl_hook_coll_size	Size of hook collision line	0	0	20
+cl_hook_coll_alpha	Alpha of hook collision line (0 invisible, 100 fully visible)	100	0	100
+cl_hook_coll_color_no_coll	Specifies the color of a hookline that hits nothing.	65407		
+cl_hook_coll_color_hookable_coll	Specifies the color of a hookline that hits hookable tiles.	6401973		
+cl_hook_coll_color_tee_coll	Specifies the color of a hookline that hits tees.	2817919		
+cl_chat_teamcolors	Show names in chat in team colors	1	0	1
+cl_chat_reset	Reset chat when pressing escape	1	0	1
+cl_chat_old	Old chat style: No tee, no background	0	0	1
+cl_chat_size	Chat font size	60	10	100
+cl_chat_width	Chat width	200	140	400
+cl_show_direction	Show key presses (1 = other players', 2 = also your own, 3 = only your own	1	0	3
+cl_old_gun_position	Tees hold gun a bit higher like in TW 0.6.1 and older	0	0	1
+cl_confirm_disconnect_time	Confirmation popup before disconnecting after game time (in minutes, -1 to turn off, 0 to always turn on)	20	-1	1440
+cl_confirm_quit_time	Confirmation popup before quitting after game time (in minutes, -1 to turn off, 0 to always turn on)	20	-1	1440
+cl_timeout_code	Timeout code to use	""		
+cl_dummy_timeout_code	Dummy Timeout code to use	""		
+cl_timeout_seed	Timeout seed	""		
+cl_input_fifo	Fifo file (non-Windows) or Named Pipe (Windows) to use as input for client console	""		
+cl_config_version	The config version. Helps newer clients fix bugs with older configs.	0	0	0
+cl_demo_slice_begin	Begin marker for demo slice	-1	0	0
+cl_demo_slice_end	End marker for demo slice	-1	0	0
+cl_demo_show_speed	Show speed meter on change	0	0	1
+cl_demo_show_pause	Show pause/play indicator on change	1	0	1
+cl_demo_keyboard_shortcuts	Enable keyboard shortcuts in demo player	1	0	1
+cl_video_recorder_fps	At which FPS the videorecorder should record demos.	60	1	1000

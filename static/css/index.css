@@ -1,0 +1,79 @@
+.ddbin-header {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.ddbin-header h1 {
+    font-size: 80px;
+}
+
+.ddbin-header p {
+    margin-top: 20px;
+}
+
+.ddbin-page {
+    margin-top: 200px;
+    margin-left: 20px;
+    flex: 1;
+    padding-bottom: 10%;
+}
+
+.ddbin-sections {
+    display: flex;
+    justify-content: space-around; /* Espaciado entre las cajas */
+    padding: 10px;
+}
+
+.ddbin-box {
+    border: 2px solid white; /* Color del borde */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    text-align: center;
+    width: 30%; /* Ancho de cada caja para que se alineen horizontalmente */
+}
+
+.ddbin-box h3 {
+    margin-bottom: 10px;
+}
+
+.ddbin-box p {
+    margin: 0;
+}
+
+.a-box {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.a-box:hover {
+    color: #a0a0a0;
+}
+
+
+.ddbin-footer {
+    border-top: 1px solid white; /* Línea blanca en la parte superior del footer */
+    background-color: rgb(20, 20, 20); /* Color de fondo para el footer */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el contenido del footer */
+}
+
+.ddbin-footer footer {
+    margin: 0;
+}
+
+.ddbin-footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.ddbin-footer a:hover {
+    color: #a0a0a0;
+}
+
+.ddbin-footer p {
+    margin-top: 10px;
+}

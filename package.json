@@ -1,0 +1,27 @@
+{
+  "name": "ddnet-bindings",
+  "version": "0.0.1",
+  "description": "Help",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "serve": "tsc && node dist/index.js",
+    "parser": "npx ts-node src/tools/parser.ts"
+  },
+  "keywords": [
+    "ddnet"
+  ],
+  "author": "neopkr",
+  "license": "MIT",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.4.0"
+  }
+}
