@@ -5,6 +5,7 @@
  */
 
 const MAX_CLIENT_SETTING_BUFFER = 100000;
+const GAME_VERSION = 18.4
 
 let DDBIN_TAGS = [
     "client",
@@ -67,6 +68,7 @@ let EXPECT_COMMANDS = [
  * @ignore this command dict was a pain to do... (tags added manually so...)
  */
 let CL_COMMANDS = {
+    "parent": "Client",
     "cl_predict": "Predict client movements | <bool> | ddbin-tag:client,antiping",
     "cl_predict_dummy": "Predict dummy movements | <bool> | ddbin-tag:client,antiping",
     "cl_antiping_limit": "Antiping limit (0 to disable) | <int:0,200> | ddbin-tag:client,antiping",
@@ -294,6 +296,7 @@ let CL_COMMANDS = {
  * Use Command.Parser // nombre provisorioxd
  */
 let UI_COMMANDS = {
+    "parent": "UI",
     "ui_color": "Interface Color | <hex> | ddbin-tag:ui",
     "ui_colorize_ping": "Highlight ping | <bool> | ddbin-tag:ui",
     "ui_colorize_gametype": "Highlight gametype | <bool> | ddbin-tag:ui",
@@ -314,6 +317,7 @@ let UI_COMMANDS = {
  * Use Command.Parser
  */
 let PLAYER_COMMANDS = {
+    "parent": "Player",
     "player_use_custom_color": "Toggles usage of custom colors | <bool> | ddbin-tag:player,skin",
     "player_color_body": "Player body color | <hex> | ddbin-tag:player,skin",
     "player_color_feet": "Player feet color | <hex> | ddbin-tag:player,skin",
@@ -322,6 +326,7 @@ let PLAYER_COMMANDS = {
 };
 
 let DUMMY_COMMANDS = {
+    "parent": "Dummy",
     "dummy_name": "Name of the dummy | <str> | ddbin-tag:client,dummy",
     "dummy_clan": "Clan of the dummy | <str> | ddbin-tag:client,dummy",
     "dummy_country": "Country of the Dummy | <int:-1,1000> | ddbin-tag:client,dummy",
@@ -335,6 +340,63 @@ let DUMMY_COMMANDS = {
  * GFX_COMMANDS
  */
 let GFX_COMMANDS = {
+    "parent": "GFX",
     "gfx_noclip": "Disable clipping | <bool>",
-
 }
+
+/**
+ * 
+ * @param {{}} dict 
+ */
+function parser(dict) {
+    let array = [];
+    const values = Object.entries(dict);
+    values.forEach(e => {
+        let template = {
+            parent: dict["parent"],
+            command: "",
+            description: "",
+            type: "",
+            min: 0,
+            max: 0,
+            tags: [],
+        };
+
+        let command_name = e[0];
+        let min;
+        let max;
+        let command_ = e[1].split("|");
+        let command_desc = command_[0].trim();
+        let command_type = command_[1]?.trim();
+        if (command_type != undefined) {
+            command_type = command_type.replace("<", "").replace(">", "");
+            if (command_type == "bool") {
+                min = 0;
+                max = 1;
+            } else if (command_type.includes("int")) {
+                let tmp_cmd = command_type.split(":");
+                min = tmp_cmd[1].split(",")[0];
+                max = tmp_cmd[1].split(",")[1];
+                command_type = tmp_cmd[0];
+            }
+        }
+
+        let command_tags = command_[2];
+        if (command_tags != undefined) {
+            command_tags = command_tags.split(":")[1].split(",");
+        }
+        template.command = command_name;
+        template.description = command_desc;
+        template.type = command_type;
+        template.min = min;
+        template.max = max;
+        template.tags = command_tags;
+        
+        if (command_name != "parent")
+            array.push(template);
+    });
+
+    return array;
+}
+
+//console.log(parser(GFX_COMMANDS));

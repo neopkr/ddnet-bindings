@@ -1,0 +1,90 @@
+.main-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.ddbin-left-side-nav {
+    width: 400px;
+    background-color: rgb(31, 31, 31);
+    padding: 20px;
+    border-right: 1px solid #444;
+}
+
+.ddbin-left-side-nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ddbin-left-side-nav h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #ffa500; /* Título con un tono naranja */
+}
+
+.ddbin-left-side-nav li {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #1e90ff; /* Color de los elementos de la lista */
+}
+
+.ddbin-left-side-nav li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #1e90ff;
+
+}
+
+.ddbin-left-side-nav li a:hover {
+    color: #ff6347; /* Color al pasar el ratón (tomato) */
+}
+
+.ddbin-left-side-nav li ul {
+    margin-top: 5px;
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.ddbin-left-side-nav li ul li a {
+    font-size: 14px;
+    color: #b0c4de; /* Color de los comandos (LightSteelBlue) */
+}
+
+.ddbin-header {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.ddbin-section {
+    margin-top: 20px;
+}
+
+.ddbin-section-header > h2 {
+    color: #1e90ff !important;
+}
+
+.section-command {
+    margin-top: 10px;
+}
+
+.section-command h4 {
+    margin-bottom: 5px;
+}
+
+.section-command p {
+    font-size: 14px;
+}
+
+.section-command span {
+    font-size: 12px;
+    color: #b0c4de;
+}
+
+.section-command span a {
+    text-decoration: none;
+    color:#1e90ff;
+    transition: 0.3s;
+}
+
+.section-command span a:hover {
+    color:#c8c8c8;
+}

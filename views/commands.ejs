@@ -5,21 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/commands.css">
     <title>DDNet Bindings | Commands</title>
 </head>
 <body>
-    <div class="main-content">
-            <!-- Navbar -->
-     <div class="ddbin-nav-div">
-        <nav>
+        <!-- Navbar -->
+        <div class="ddbin-nav-div">
+          <nav>
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/commands">Commands</a></li>
+                  <li><a href="/binds">Binds</a></li>
+              </ul>
+          </nav>
+      </div>
+      <!-- End navbar -->
+  <div class="main-content">
+      <!-- Sidebar -->
+      <div class="ddbin-left-side-nav">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/commands">Commands</a></li>
-            <li><a href="/binds">Binds</a></li>
+              <h4>Tags</h4>
+              <li><a href="#tags-test">Client</a></li>
+              <h4>Types</h4>
+              <li>
+                <a href="#type-bool">bool</a>
+              </li>
+              <li><a href="#type-int">int</a></li>
+              <li><a href="#type-hex">hex</a></li>
+              <li><a href="#type-str">string</a></li>
+              <h4>Command List</h4>
+              <li id="Client-Left">
+                <a href="#Client">Client</a>
+                  <ul id="Client-Left-ul">
+                      <li><a>cl_command_test</a></li>
+                      <!-- Agrega más comandos aquí -->
+                  </ul>
+              </li>
+              <li id="Player-Left">
+                <a href="#Player">Player</a>
+                  <ul id="Player-Left-ul">
+                    <li><a>player_command_test</a></li>
+                      <!-- Agrega más comandos aquí -->
+                  </ul>
+              </li>
+              <li id="Dummy-Left">
+                <a href="#Dummy">Dummy</a>
+                  <ul id="Dummy-Left-ul">
+                    <li><a>dummy_command_test</a></li>
+                      <!-- Agrega más comandos aquí -->
+                  </ul>
+              </li>
+              <li id="GFX-Left">
+                <a href="#GFX">GFX</a>
+                  <ul id="GFX-Left-ul">
+                    <li><a>gfx_command_test</a></li>
+                      <!-- Agrega más comandos aquí -->
+                  </ul>
+              </li>
+              <li id="UI-Left">
+                <a href="#UI">UI</a>
+                  <ul id="UI-Left-ul">
+                    <li><a>ui_command_test</a></li>
+                      <!-- Agrega más comandos aquí -->
+                  </ul>
+              </li>
           </ul>
-        </nav>
-       </div>
-       <!-- End navbar -->
-    </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="ddbin-header">
+          <header>
+              <h1>Commands</h1>
+              <p>Here we have Docs/API for any command existing on DDRaceNetwork for facilitate the creation on binds. Reminder you can <a href="#">submit your bind here!</a></p>
+              <p id="game-version"></p>
+          </header>
+          <!-- flex only works here, idk im not css boy -->
+          <div class="ddbin-page">
+            <article id="Client" class="ddbin-section">
+              <h2 class="ddbin-section-header">Client</h2>
+              <div class="section-command">
+                <h4>cl_command_test</h4>
+                <p>this is the description</p>
+                <span>Type: <a href="#">bool</a></span>
+                <span>Tags: Cient</span>
+              </div>
+            </article>
+            <article id="Player" class="ddbin-section">
+              <h2 class="ddbin-section-header">Player</h2>
+              <div class="section-command">
+                <h4>player_command_test</h4>
+                <p>this is the description</p>
+                <span>Type: <a href="#">bool</a></span>
+                <span>Tags: Player</span>
+              </div>
+            </article>
+            <article id="Dummy" class="ddbin-section">
+              <h2 class="ddbin-section-header">Dummy</h2>
+              <div class="section-command">
+                <h4>dummy_command_test</h4>
+                <p>this is the description</p>
+                <span>Type: <a href="#">bool</a></span>
+                <span>Tags: Dummy</span>
+              </div>
+            </article>
+            <article id="UI" class="ddbin-section">
+              <h2 class="ddbin-section-header">UI</h2>
+              <div class="section-command">
+                <h4>ui_command_test</h4>
+                <p>this is the description</p>
+                <span>Type: <a href="#">bool</a></span>
+                <span>Tags: UI</span>
+              </div>
+            </article>
+            <article id="GFX" class="ddbin-section">
+              <h2 class="ddbin-section-header">GFX</h2>
+              <div class="section-command">
+                <h4>gfx_command_test</h4>
+                <p>this is the description</p>
+                <span>Type: <a href="#">bool</a></span>
+                <span>Tags: GFX</span>
+              </div>
+            </article>
+          </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="ddbin-footer">
+      <footer>
+          <a href="#">Submit your bind</a>
+          <a href="#">Github Page Project</a>
+          <a href="#">DDRaceNetwork Official Page</a>
+          <a href="#">License</a>
+          <p>Owner: neopkr</p>
+      </footer>
+  </div>
+  <script src="js/commands.js"></script>
+  <script src="js/integrate.js"></script>
 </body>
 </html>
