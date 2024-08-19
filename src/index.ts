@@ -8,22 +8,19 @@ const app = express();
 // Static for CSS JS
 app.use(express.static(path.join(__dirname, '../static')));
 
-// Set engine
-app.set('view engine', 'ejs');
-
 // Set pages
 // Routes
 app.get('/', (req: Request, res: Response) => {
-  res.render("index");
+  res.sendFile(path.join(__dirname, "../views", "index.html"));
 })
 
 app.get('/commands', (req: Request, res: Response) => {
-  res.render("commands");
+  res.sendFile(path.join(__dirname, "../views", "commands.html"));
 })
 
 
 app.get('/binds', (req: Request, res: Response) => {
-  res.render("binds");
+  res.sendFile(path.join(__dirname, "../views", "binds.html"));
 })
 
 app.listen(8080, () => {

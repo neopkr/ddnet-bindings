@@ -3,6 +3,8 @@
 .main-content {
     display: flex;
     flex-direction: row;
+    height: 100vh; /* Para que el contenedor principal ocupe toda la altura de la pantalla */
+    overflow: hidden; /* Evitar scroll en el contenedor principal */
 }
 
 .ddbin-left-side-nav {
@@ -10,6 +12,7 @@
     background-color: rgb(31, 31, 31);
     padding: 20px;
     border-right: 1px solid #444;
+    overflow-y: auto; /* Scroll independiente para el sidebar */
 }
 
 .ddbin-left-side-nav ul {
@@ -54,6 +57,9 @@
 .ddbin-header {
     flex-grow: 1;
     padding: 20px;
+    overflow-y: auto; /* Scroll independiente para el contenido principal */
+    height: 100vh; /* Ocupa toda la altura disponible */
+    max-height: calc(100vh - 50px);
 }
 
 .ddbin-section {
@@ -168,3 +174,43 @@
     visibility: visible;
     opacity: 1;
   }
+
+  /* Estilos generales para la scrollbar */
+.ddbin-left-side-nav::-webkit-scrollbar, .main-content::-webkit-scrollbar, .ddbin-header::-webkit-scrollbar, .dropdown::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Fondo de la scrollbar */
+.ddbin-left-side-nav::-webkit-scrollbar-track, .main-content::-webkit-scrollbar-track, .ddbin-header::-webkit-scrollbar-track, .dropdown::-webkit-scrollbar-track {
+    background: #1f1f1f; /* Color de fondo */
+    border-radius: 10px;
+}
+
+/* Thumb de la scrollbar */
+.ddbin-left-side-nav::-webkit-scrollbar-thumb, .main-content::-webkit-scrollbar-thumb, .ddbin-header::-webkit-scrollbar-thumb, .dropdown::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a; /* Color del thumb */
+    border-radius: 10px;
+    border: 2px solid #1f1f1f; /* Espacio entre el thumb y el track */
+}
+
+/* Thumb en hover */
+.ddbin-left-side-nav::-webkit-scrollbar-thumb:hover, .main-content::-webkit-scrollbar-thumb:hover, .ddbin-header:-webkit-scrollbar-thumb:hover, .dropdown:-webkit-scrollbar-thumb:hover  {
+    background-color: #5e5e5e; /* Color al pasar el mouse */
+}
+
+/* Estilos para Firefox */
+.ddbin-left-side-nav {
+    scrollbar-width: thin;
+    scrollbar-color: #4a4a4a #1f1f1f;
+}
+
+/* Estilo del thumb en Firefox */
+.ddbin-left-side-nav::-moz-scrollbar-thumb, .main-content::-moz-scrollbar-thumb {
+    background-color: #4a4a4a;
+    border-radius: 10px;
+}
+
+/* Thumb en hover para Firefox */
+.ddbin-left-side-nav:hover::-moz-scrollbar-thumb, .main-content:hover::-moz-scrollbar-thumb {
+    background-color: #5e5e5e;
+}

@@ -243,3 +243,50 @@ function tag_on_click(text) {
 const version = document.getElementById('game-version');
 version.textContent = `Game Version: ${GAME_VERSION}`;
 addToPage();
+
+// Add to search
+const options = GetAllCommands();
+
+function showSuggestions() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+  const suggestions = document.getElementById('suggestions');
+  
+  // Limpiar las sugerencias anteriores
+  suggestions.innerHTML = '';
+
+  if (filter.length > 0) {
+    // Filtrar las opciones basadas en la entrada del usuario
+    const filteredOptions = options.filter(option => option.toLowerCase().includes(filter));
+
+    // Mostrar solo si hay opciones que coinciden
+    if (filteredOptions.length > 0) {
+      suggestions.style.display = 'block';
+
+      filteredOptions.forEach(option => {
+        const li = document.createElement('li');
+        li.textContent = option;
+        li.addEventListener('click', () => {
+          input.value = option; // Completar el input con la opción seleccionada
+          document.location = `#${option}`
+          suggestions.style.display = 'none'; // Ocultar el dropdown después de seleccionar
+        });
+        suggestions.appendChild(li);
+      });
+    } else {
+      suggestions.style.display = 'none'; // Ocultar si no hay opciones coincidentes
+    }
+  } else {
+    suggestions.style.display = 'none'; // Ocultar si no hay texto en el input
+  }
+}
+
+// Ocultar el dropdown si se hace clic fuera del mismo
+document.addEventListener('click', function(e) {
+  const searchContainer = document.querySelector('.search-container');
+  const suggestions = document.getElementById('suggestions');
+
+  if (!searchContainer.contains(e.target)) {
+    suggestions.style.display = 'none';
+  }
+});

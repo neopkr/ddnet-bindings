@@ -18,6 +18,10 @@
                   <li><a href="/">Home</a></li>
                   <li><a href="/commands">Commands</a></li>
                   <li><a href="/binds">Binds</a></li>
+                  <li class="search-container">
+                    Search <input type="text" id="searchInput" oninput="showSuggestions()">
+                    <ul id="suggestions" class="dropdown"></ul>
+                  </li>
               </ul>
           </nav>
       </div>
@@ -80,7 +84,7 @@
           <header>
               <h1>Commands</h1>
               <p>Here we have Docs/API for any command existing on DDRaceNetwork for facilitate the creation on binds. Reminder you can <a class="ddbin-a-style" href="#">submit your bind here!</a></p>
-              <p id="game-version"></p>
+              <p id="game-version">Game Version: 0</p>
           </header>
           <!-- flex only works here, idk im not css boy -->
           <div class="ddbin-page">
@@ -144,15 +148,7 @@
   </div>
 
   <!-- Footer -->
-  <div class="ddbin-footer">
-      <footer>
-          <a href="#">Submit your bind</a>
-          <a href="#">Github Page Project</a>
-          <a href="#">DDRaceNetwork Official Page</a>
-          <a href="#">License</a>
-          <p>Owner: neopkr</p>
-      </footer>
-  </div>
+
   <script src="js/commands.js"></script>
   <script src="js/integrate.js"></script>
   <script src="js/dropdown.js"></script>

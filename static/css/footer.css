@@ -1,10 +1,12 @@
 .ddbin-footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
     border-top: 1px solid white; /* Línea blanca en la parte superior del footer */
     background-color: rgb(20, 20, 20); /* Color de fondo para el footer */
     padding: 10px 20px; /* Espaciado interno */
     text-align: center; /* Centra el contenido del footer */
 }
-
 .ddbin-footer footer {
     margin: 0;
 }

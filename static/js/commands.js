@@ -399,4 +399,36 @@ function parser(dict) {
     return array;
 }
 
+function GetAllCommands() {
+    const client = parser(CL_COMMANDS);
+    const player = parser(PLAYER_COMMANDS);
+    const dummy = parser(DUMMY_COMMANDS);
+    const ui = parser(UI_COMMANDS);
+    const gfx = parser(GFX_COMMANDS);
+
+    let array = [];
+
+    for (let i = 0; i < client.length; i++) {
+        array.push(client[i]["command"]);
+    }
+
+    for (let i = 0; i < player.length; i++) {
+        array.push(player[i]["command"]);
+    }
+
+    for (let i = 0; i < dummy.length; i++) {
+        array.push(dummy[i]["command"]);
+    }
+
+    for (let i = 0; i < ui.length; i++) {
+        array.push(ui[i]["command"]);
+    }
+
+    for (let i = 0; i < gfx.length; i++) {
+        array.push(gfx[i]["command"]);
+    }
+
+    return array;
+}
+
 //console.log(parser(GFX_COMMANDS));
