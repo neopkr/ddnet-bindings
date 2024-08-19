@@ -52,8 +52,7 @@ function addToLeftNav(parent, command_name) {
 
 }
 
-function loopAdd(parent, command_parsed) {
-    let CommandParent = document.getElementById(parent)
+function loopAdd(parent, command_parsed, div = undefined, isTag = false) {
     for(let i = 0; i < command_parsed.length; i++) {
         let commandNode = document.createElement('div');
         commandNode.classList.add('section-command');
@@ -123,9 +122,16 @@ function loopAdd(parent, command_parsed) {
         commandNode.appendChild(desc);
         commandNode.appendChild(types);
         commandNode.appendChild(tags);
-        commandNode.id = command_parsed[i]["command"];
-        CommandParent.appendChild(commandNode);
-        addToLeftNav(command_parsed[0]["parent"], command_parsed[i]["command"]);
+
+        // Add to the correct place based on isTag
+        if (!isTag) {
+            commandNode.id = command_parsed[i]["command"];
+            document.getElementById(parent).appendChild(commandNode);
+            addToLeftNav(parent, command_parsed[i]["command"]);
+        } else {
+            commandNode.id = `${command_parsed[i]["command"]}_is_tag`;
+            div.appendChild(commandNode);
+        }
     }
 }
 
@@ -146,18 +152,93 @@ function addToPage() {
     const dummy = parser(DUMMY_COMMANDS);
     const ui = parser(UI_COMMANDS);
     const gfx = parser(GFX_COMMANDS);
-    // Add more
 
-    //console.log(client[0]["parent"], player[0]["parent"], dummy[0]["parent"], ui[0]["parent"], gfx[0]["parent"])
-
+    // Loop over each category
     loopAdd(client[0]["parent"], client);
     loopAdd(player[0]["parent"], player);
     loopAdd(dummy[0]["parent"], dummy);
     loopAdd(ui[0]["parent"], ui);
     loopAdd(gfx[0]["parent"], gfx);
 
-}
+    // Create the tags sections <h2 class="ddbin-section-header">Client</h2>
+    DDBIN_TAGS.forEach((e) => {
+        let div = document.createElement('div');
+        let article = document.createElement('article');
+        let h2 = document.createElement('h2');
+        let i = document.createElement('i');
+        let div_clip = document.createElement('div');
+        let span_clip = document.createElement('span');
 
+        span_clip.textContent = "Copy to clipboard";
+        span_clip.classList.add("tooltiptext");
+        span_clip.id = "tooltip-display";
+        div_clip.classList.add('tooltip');
+        i.classList.add("bi", "bi-tags", "icon-size-tag");
+        i.appendChild(span_clip);
+        i.onclick = tag_on_click();
+        div_clip.appendChild(i);
+        div_clip.style.display = "inline";
+        div_clip.style.cursor = "pointer"
+        h2.textContent = e + " ";
+        h2.appendChild(div_clip);
+        
+        h2.classList.add("ddbin-section-header");
+        div.classList.add(`tags-${e}`);
+        div.id = `tags-${e}`;
+        article.id = `${e}-filter-tag`;
+        article.classList.add('ddbin-section');
+        article.appendChild(h2);
+        div.appendChild(article);
+        document.querySelector(".tags").appendChild(div);
+
+        // Add only matching commands to the tag section
+        client.forEach((j) => {
+            if (j["tags"] && j["tags"].includes(e)) {
+                loopAdd(undefined, [j], article, true);
+            }
+        });
+    });
+}
+// ddbin-nav-tag , <li class="tag-section" id="tag-test"><a href="#test">Test</a></li>
+// Add Tags
+DDBIN_TAGS.forEach((e) => {
+    let li = document.createElement('li');
+    let a = document.createElement('a');
+    a.textContent = e;
+    a.href = `#tags-${e}`;
+    li.classList.add("tag-section");
+    li.appendChild(a);
+    document.querySelector(".ddbin-nav-tag").appendChild(li);
+});
+
+// Create the tag section // parent: tags
+/*
+              <div class="tags-client">
+                <article id="client-filter-tag" class="ddbin-section">
+                  <h2 class="ddbin-section-header">Client</h2>
+                  <div class="section-command">
+                    <h4>cl_command_test</h4>
+                    <p>this is the description</p>
+                    <span>Type: <a href="#">bool</a></span>
+                    <span>Tags: Cient</span>
+                  </div>
+                </article>
+              </div>
+*/
+
+
+function tag_on_click(text) {
+    /*
+    navigator.clipboard.writeText(`localhost:8080/${text}`);
+    console.log(document.getElementById("tooltip-display"))
+    var tooltip = document.getElementById("tooltip-display");
+    tooltip.textContent = "Copied: " + document.URL;
+    
+    make work this
+    
+    */
+   
+}
 
 const version = document.getElementById('game-version');
 version.textContent = `Game Version: ${GAME_VERSION}`;

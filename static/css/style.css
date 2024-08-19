@@ -15,3 +15,13 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.ddbin-a-style {
+    text-decoration: none;
+    color: #1e90ff;
+    transition: 0.3s;
+}
+
+.ddbin-a-style:hover {
+    color: #b0c4de;
+}
