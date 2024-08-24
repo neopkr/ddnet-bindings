@@ -4,7 +4,7 @@
  * @neopkr
  */
 
-const MAX_CLIENT_SETTING_BUFFER = 100000;
+const MAX_CLIENT_SETTING_BUFFER = 100000; // changed it
 const GAME_VERSION = 18.4
 
 let DDBIN_TAGS = [
